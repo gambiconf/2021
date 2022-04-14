@@ -1,0 +1,4 @@
+parent_id,module,code,data,type,timestamp,init_timestamp,memory_current,memory_peak,user_id,remote_ip
+1632406675.5835,file_change,scan,"a:1:{s:6:""status"";s:14:""start_complete"";}",process-update,"2021-09-23 14:32:03","2021-09-23 14:32:03",17392992,17439952,wp-cron,1,0,2001:19f0:9002:b2e:5400:2ff:fed9:6bb4
+0,file_change,"changes-found::1,0,0","a:5:{s:5:""added"";a:1:{s:56:""/3://gambiconf_MQrZ2mWp/uploads/elementor/css/global.css"";a:5:{s:1:""d"";i:1632399476;s:1:""h"";s:32:""ca2a17dfe92167ba50f85f6dd5233168"";s:1:""t"";s:1:""a"";s:1:""s"";i:1;s:1:""p"";s:7:""Unknown"";}}s:7:""removed"";a:0:{}s:7:""changed"";a:0:{}s:6:""memory"";d:17.73;s:11:""memory_peak"";d:35.17;}",warning,"2021-09-23 14:32:04","2021-09-23 14:32:03",18018264,25211432,wp-cron,1,0,2001:19f0:9002:b2e:5400:2ff:fed9:6bb4
+1632406675.5835,file_change,scan,,process-stop,"2021-09-23 14:32:04","2021-09-23 14:32:03",18053304,25980504,wp-cron,1,0,2001:19f0:9002:b2e:5400:2ff:fed9:6bb4

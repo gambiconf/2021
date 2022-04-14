@@ -1,0 +1,3 @@
+parent_id,module,code,data,type,timestamp,init_timestamp,memory_current,memory_peak,user_id,remote_ip
+1632505436.5886,login-interstitial,save,"a:3:{s:7:""current"";b:0;s:9:""completed"";a:1:{i:0;s:12:""2fa-on-board"";}s:10:""show_after"";a:0:{}}",process-update,"2021-09-24 17:44:03","2021-09-24 17:44:03",17550792,17564040,https://gambiconf.criacao.page/wp/wp-login.php?action=itsec-2fa-on-board,1,2,138.36.82.87
+1632505436.5886,login-interstitial,create,,process-stop,"2021-09-24 17:44:04","2021-09-24 17:44:03",18215632,19315584,https://gambiconf.criacao.page/wp/wp-login.php?action=itsec-2fa-on-board,1,2,138.36.82.87

@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<!-- saved from url=(0040)https://gambiconf.dev/2021/codigo-de-conduta/ -->
+<html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(e){this.triggerEvents=e,this.eventOptions={passive:!0},this.userEventListener=this.triggerListener.bind(this),this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventListener,e.eventOptions)))}_removeUserInteractionListener(e){this.triggerEvents.forEach((t=>window.removeEventListener(t,e.userEventListener,e.eventOptions)))}triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}async _loadEverythingNow(){this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async),await this._triggerDOMContentLoaded(),await this._triggerWindowLoad(),window.dispatchEvent(new Event("rocket-allScriptsLoaded"))}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._requestAnimFrame(),new Promise((t=>{const n=document.createElement("script");let r;[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type",r=e.nodeValue),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t()),e.parentNode.replaceChild(n,e)}))}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){var e=document.createDocumentFragment();[...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async].forEach((t=>{const n=t.getAttribute("src");if(n){const t=document.createElement("link");t.href=n,t.rel="preload",t.as="script",e.appendChild(t)}})),document.head.appendChild(e)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(r){e["rocket"+t]=n=r}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._requestAnimFrame(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-load")),await this._requestAnimFrame(),window.rocketonload&&window.rocketonload(),await this._requestAnimFrame(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),window.dispatchEvent(new Event("rocket-pageshow")),await this._requestAnimFrame(),window.rocketonpageshow&&window.rocketonpageshow()}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,r=document.createRange(),i=n.parentElement;let o=e.get(n);void 0===o&&(o=n.nextSibling,e.set(n,o));const a=document.createDocumentFragment();r.setStart(a,0),a.appendChild(r.createContextualFragment(t)),i.insertBefore(a,o)}}async _requestAnimFrame(){return new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts(["keydown","mousemove","touchmove","touchstart","touchend","wheel"]);e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();</script>
+	
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+	<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+	<!-- This site is optimized with the Yoast SEO plugin v17.8 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Código de Conduta - GambiConf</title><link rel="preload" as="style" href="./codigo-de-conduta/css"><link rel="stylesheet" href="./codigo-de-conduta/css" media="all" onload="this.media=&#39;all&#39;"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mukta%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CNunito%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;display=swap" /></noscript>
+	<meta name="description" content="Conheça nosso Código de Conduta e saiba mais sobre o que nos move! GambiConf um Evento Tech diferente para todos.">
+	<link rel="canonical" href="https://gambiconf.dev/2021/codigo-de-conduta/">
+	<meta property="og:locale" content="pt_BR">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="Código de Conduta - GambiConf">
+	<meta property="og:description" content="Conheça nosso Código de Conduta e saiba mais sobre o que nos move! GambiConf um Evento Tech diferente para todos.">
+	<meta property="og:url" content="https://gambiconf.dev/2021/codigo-de-conduta/">
+	<meta property="og:site_name" content="Gambiconf">
+	<meta property="article:modified_time" content="2021-10-11T21:47:18+00:00">
+	<meta property="og:image" content="./uploads/2021/09/pixelart-book.png">
+	<meta property="og:image:width" content="78">
+	<meta property="og:image:height" content="58">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:label1" content="Est. reading time">
+	<meta name="twitter:data1" content="4 minutos">
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://gambiconf.dev/2021/#website","url":"https://gambiconf.dev/2021/","name":"Gambiconf","description":"Evento Tech","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://gambiconf.dev/2021/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"pt-BR"},{"@type":"ImageObject","@id":"https://gambiconf.dev/2021/codigo-de-conduta/#primaryimage","inLanguage":"pt-BR","url":"./uploads/2021/09/pixelart-book.png","contentUrl":"./uploads/2021/09/pixelart-book.png","width":78,"height":58},{"@type":"WebPage","@id":"https://gambiconf.dev/2021/codigo-de-conduta/#webpage","url":"https://gambiconf.dev/2021/codigo-de-conduta/","name":"C\u00f3digo de Conduta - GambiConf","isPartOf":{"@id":"https://gambiconf.dev/2021/#website"},"primaryImageOfPage":{"@id":"https://gambiconf.dev/2021/codigo-de-conduta/#primaryimage"},"datePublished":"2021-09-23T14:54:50+00:00","dateModified":"2021-10-11T21:47:18+00:00","description":"Conhe\u00e7a nosso C\u00f3digo de Conduta e saiba mais sobre o que nos move! GambiConf um Evento Tech diferente para todos.","breadcrumb":{"@id":"https://gambiconf.dev/2021/codigo-de-conduta/#breadcrumb"},"inLanguage":"pt-BR","potentialAction":[{"@type":"ReadAction","target":["https://gambiconf.dev/2021/codigo-de-conduta/"]}]},{"@type":"BreadcrumbList","@id":"https://gambiconf.dev/2021/codigo-de-conduta/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gambiconf.dev/2021/"},{"@type":"ListItem","position":2,"name":"C\u00f3digo de Conduta"}]}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel="dns-prefetch" href="https://gambiconf_mqrz2mwp.s3.amazonaws.com/">
+<link href="https://fonts.gstatic.com/" crossorigin="" rel="preconnect">
+<link rel="alternate" type="application/rss+xml" title="Feed para Gambiconf »" href="https://gambiconf.dev/2021/feed/">
+<link rel="alternate" type="application/rss+xml" title="Feed de comentários para Gambiconf »" href="https://gambiconf.dev/2021/comments/feed/">
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel="stylesheet" id="wp-block-library-css" href="./codigo-de-conduta/style.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="criacaocc-app-css" href="./codigo-de-conduta/app.css" type="text/css" media="all">
+<link data-minify="1" rel="stylesheet" id="elementor-icons-css" href="./codigo-de-conduta/elementor-icons.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-frontend-css" href="./codigo-de-conduta/frontend-lite.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-post-4-css" href="./codigo-de-conduta/post-4.css" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-pro-css" href="./codigo-de-conduta/frontend-lite.min(1).css" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-global-css" href="./codigo-de-conduta/global.css" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-post-110-css" href="./codigo-de-conduta/post-110.css" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-post-137-css" href="./codigo-de-conduta/post-137.css" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-post-159-css" href="./codigo-de-conduta/post-159.css" type="text/css" media="all">
+<style id="rocket-lazyload-inline-css" type="text/css">
+.rll-youtube-player{position:relative;padding-bottom:56.23%;height:0;overflow:hidden;max-width:100%;}.rll-youtube-player iframe{position:absolute;top:0;left:0;width:100%;height:100%;z-index:100;background:0 0}.rll-youtube-player img{bottom:0;display:block;left:0;margin:auto;max-width:100%;width:100%;position:absolute;right:0;top:0;border:none;height:auto;cursor:pointer;-webkit-transition:.4s all;-moz-transition:.4s all;transition:.4s all}.rll-youtube-player img:hover{-webkit-filter:brightness(75%)}.rll-youtube-player .play{height:72px;width:72px;left:50%;top:50%;margin-left:-36px;margin-top:-36px;position:absolute;background:url(https://gambiconf.dev/2021/packages/plugins/wp-rocket/assets/img/youtube.png) no-repeat;cursor:pointer}
+</style>
+
+<link rel="stylesheet" id="elementor-icons-shared-0-css" href="./codigo-de-conduta/fontawesome.min.css" type="text/css" media="all">
+<link data-minify="1" rel="stylesheet" id="elementor-icons-fa-regular-css" href="./codigo-de-conduta/regular.min.css" type="text/css" media="all">
+<link data-minify="1" rel="stylesheet" id="elementor-icons-fa-solid-css" href="./codigo-de-conduta/solid.min.css" type="text/css" media="all">
+<link data-minify="1" rel="stylesheet" id="elementor-icons-fa-brands-css" href="./codigo-de-conduta/brands.min.css" type="text/css" media="all">
+<link rel="https://api.w.org/" href="https://gambiconf.dev/2021/wp-json/"><link rel="alternate" type="application/json" href="https://gambiconf.dev/2021/wp-json/wp/v2/pages/110"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://gambiconf.dev/2021/wp/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://gambiconf.dev/2021/wp/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 5.8.3">
+<link rel="shortlink" href="https://gambiconf.dev/2021/?p=110">
+<link rel="alternate" type="application/json+oembed" href="https://gambiconf.dev/2021/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fgambiconf.dev%2Fcodigo-de-conduta%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://gambiconf.dev/2021/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fgambiconf.dev%2Fcodigo-de-conduta%2F&amp;format=xml">
+<meta name="generator" content="Site Kit by Google 1.48.1"><link rel="icon" href="./uploads/2021/09/cropped-GambiIcon512-32x32.png" sizes="32x32">
+<link rel="icon" href="./uploads/2021/09/cropped-GambiIcon512-192x192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="./uploads/2021/09/cropped-GambiIcon512-180x180.png">
+<meta name="msapplication-TileImage" content="./uploads/2021/09/cropped-GambiIcon512-270x270.png">
+<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript><link href="./codigo-de-conduta/app.js" rel="preload" as="script"><link href="./codigo-de-conduta/jquery.min.js" rel="preload" as="script"><link href="./codigo-de-conduta/jquery-migrate.min.js" rel="preload" as="script"><link href="./codigo-de-conduta/jquery.smartmenus.min.js" rel="preload" as="script"><link href="./codigo-de-conduta/webpack-pro.runtime.min.js" rel="preload" as="script"><link href="./codigo-de-conduta/webpack.runtime.min.js" rel="preload" as="script"><link href="./codigo-de-conduta/frontend-modules.min.js" rel="preload" as="script"><link href="./codigo-de-conduta/frontend.min.js" rel="preload" as="script"><link href="./codigo-de-conduta/waypoints.min.js" rel="preload" as="script"><link href="./codigo-de-conduta/core.min.js" rel="preload" as="script"><link href="./codigo-de-conduta/frontend.min(1).js" rel="preload" as="script"><link href="./codigo-de-conduta/elements-handlers.min.js" rel="preload" as="script"><link href="./codigo-de-conduta/jquery.sticky.min.js" rel="preload" as="script"></head>
+<body class="page-template page-template-elementor_header_footer page page-id-110 wp-custom-logo elementor-default elementor-template-full-width elementor-kit-4 elementor-page elementor-page-110 e--ua-blink e--ua-chrome e--ua-mac e--ua-webkit" data-new-gr-c-s-check-loaded="14.1056.0" data-gr-ext-installed="" data-elementor-device-mode="desktop">
+
+		<div data-elementor-type="header" data-elementor-id="137" class="elementor elementor-137 elementor-location-header" data-elementor-settings="[]">
+		<div class="elementor-section-wrap">
+					<header class="elementor-section elementor-top-section elementor-element elementor-element-7161dc7e elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-sticky elementor-sticky--active elementor-section--handles-inside elementor-sticky--effects" data-id="7161dc7e" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;sticky&quot;:&quot;top&quot;,&quot;sticky_on&quot;:[&quot;desktop&quot;],&quot;sticky_offset&quot;:0,&quot;sticky_effects_offset&quot;:0}" style="position: fixed; width: 1680px; margin-top: 0px; margin-bottom: 0px; top: 0px;">
+						<div class="elementor-container elementor-column-gap-no">
+					<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-6b421131" data-id="6b421131" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-34262948 elementor-widget elementor-widget-image" data-id="34262948" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+			<style>/*! elementor - v3.5.3 - 28-12-2021 */
+.elementor-widget-image{text-align:center}.elementor-widget-image a{display:inline-block}.elementor-widget-image a img[src$=".svg"]{width:48px}.elementor-widget-image img{vertical-align:middle;display:inline-block}</style>													<a href="https://gambiconf.dev/2021/">
+							<img width="512" height="372" src="./codigo-de-conduta/GambiLogoMultigradient512.png" class="attachment-full size-full lazyloaded" alt="" sizes="(max-width: 512px) 100vw, 512px" srcset="./uploads/2021/09/GambiLogoMultigradient512.png 512w, ./uploads/2021/09/GambiLogoMultigradient512-300x218.png 300w" data-ll-status="loaded"><noscript><img width="512" height="372" src="./uploads/2021/09/GambiLogoMultigradient512.png" class="attachment-full size-full" alt="" srcset="./uploads/2021/09/GambiLogoMultigradient512.png 512w, ./uploads/2021/09/GambiLogoMultigradient512-300x218.png 300w" sizes="(max-width: 512px) 100vw, 512px" /></noscript>								</a>
+															</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-735c5b07" data-id="735c5b07" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-ff501d3 elementor-nav-menu--stretch elementor-widget__width-auto elementor-nav-menu__text-align-center elementor-nav-menu--dropdown-tablet elementor-nav-menu--toggle elementor-nav-menu--burger elementor-widget elementor-widget-nav-menu" data-id="ff501d3" data-element_type="widget" data-settings="{&quot;full_width&quot;:&quot;stretch&quot;,&quot;layout&quot;:&quot;horizontal&quot;,&quot;submenu_icon&quot;:{&quot;value&quot;:&quot;&lt;i class=\&quot;fas fa-caret-down\&quot;&gt;&lt;\/i&gt;&quot;,&quot;library&quot;:&quot;fa-solid&quot;},&quot;toggle&quot;:&quot;burger&quot;}" data-widget_type="nav-menu.default">
+				<div class="elementor-widget-container">
+			<link rel="stylesheet" href="./codigo-de-conduta/widget-nav-menu.min.css">			<nav migration_allowed="1" migrated="0" role="navigation" class="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-horizontal e--pointer-text e--animation-skew">
+				<ul id="menu-1-ff501d3" class="elementor-nav-menu" data-smartmenus-id="1649533735219336"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-144"><a href="https://gambiconf.dev/2021/" class="elementor-item">Início</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-145"><a href="https://gambiconf.dev/2021/#sobre" class="elementor-item elementor-item-anchor">Sobre</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-148"><a href="https://gambiconf.dev/2021/#programacao" class="elementor-item elementor-item-anchor">Programação</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-363"><a href="https://gambiconf.dev/2021/#palestrantes" class="elementor-item elementor-item-anchor">Palestrantes</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-149"><a href="https://gambiconf.dev/2021/#ingressos" class="elementor-item elementor-item-anchor">Adquirir Ingressos</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-150"><a href="https://gambiconf.dev/2021/#contato" class="elementor-item elementor-item-anchor">Contato</a></li>
+</ul>			</nav>
+					<div class="elementor-menu-toggle" role="button" tabindex="0" aria-label="Alternar menu" aria-expanded="false" style="">
+			<i aria-hidden="true" role="presentation" class="elementor-menu-toggle__icon--open eicon-menu-bar"></i><i aria-hidden="true" role="presentation" class="elementor-menu-toggle__icon--close eicon-close"></i>			<span class="elementor-screen-only">Menu</span>
+		</div>
+			<nav class="elementor-nav-menu--dropdown elementor-nav-menu__container" role="navigation" aria-hidden="true" style="top: 44px; width: 1680px; left: 0px;">
+				<ul id="menu-2-ff501d3" class="elementor-nav-menu" data-smartmenus-id="16495337352208245"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-144"><a href="https://gambiconf.dev/2021/" class="elementor-item" tabindex="-1">Início</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-145"><a href="https://gambiconf.dev/2021/#sobre" class="elementor-item elementor-item-anchor" tabindex="-1">Sobre</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-148"><a href="https://gambiconf.dev/2021/#programacao" class="elementor-item elementor-item-anchor" tabindex="-1">Programação</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-363"><a href="https://gambiconf.dev/2021/#palestrantes" class="elementor-item elementor-item-anchor" tabindex="-1">Palestrantes</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-149"><a href="https://gambiconf.dev/2021/#ingressos" class="elementor-item elementor-item-anchor" tabindex="-1">Adquirir Ingressos</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-150"><a href="https://gambiconf.dev/2021/#contato" class="elementor-item elementor-item-anchor" tabindex="-1">Contato</a></li>
+</ul>			</nav>
+				</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</header><header class="elementor-section elementor-top-section elementor-element elementor-element-7161dc7e elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-sticky elementor-sticky__spacer" data-id="7161dc7e" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;sticky&quot;:&quot;top&quot;,&quot;sticky_on&quot;:[&quot;desktop&quot;],&quot;sticky_offset&quot;:0,&quot;sticky_effects_offset&quot;:0}" style="visibility: hidden; transition: none 0s ease 0s; animation: 0s ease 0s 1 normal none running none;">
+						<div class="elementor-container elementor-column-gap-no">
+					<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-6b421131" data-id="6b421131" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-34262948 elementor-widget elementor-widget-image" data-id="34262948" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+			<style>/*! elementor - v3.5.3 - 28-12-2021 */
+.elementor-widget-image{text-align:center}.elementor-widget-image a{display:inline-block}.elementor-widget-image a img[src$=".svg"]{width:48px}.elementor-widget-image img{vertical-align:middle;display:inline-block}</style>													<a href="https://gambiconf.dev/2021/">
+							<img width="512" height="372" src="./codigo-de-conduta/GambiLogoMultigradient512.png" class="attachment-full size-full lazyloaded" alt="" sizes="(max-width: 512px) 100vw, 512px" srcset="./uploads/2021/09/GambiLogoMultigradient512.png 512w, ./uploads/2021/09/GambiLogoMultigradient512-300x218.png 300w" data-ll-status="loaded"><noscript><img width="512" height="372" src="./uploads/2021/09/GambiLogoMultigradient512.png" class="attachment-full size-full" alt="" srcset="./uploads/2021/09/GambiLogoMultigradient512.png 512w, ./uploads/2021/09/GambiLogoMultigradient512-300x218.png 300w" sizes="(max-width: 512px) 100vw, 512px" /></noscript>								</a>
+															</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-735c5b07" data-id="735c5b07" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-ff501d3 elementor-nav-menu--stretch elementor-widget__width-auto elementor-nav-menu__text-align-center elementor-nav-menu--dropdown-tablet elementor-nav-menu--toggle elementor-nav-menu--burger elementor-widget elementor-widget-nav-menu" data-id="ff501d3" data-element_type="widget" data-settings="{&quot;full_width&quot;:&quot;stretch&quot;,&quot;layout&quot;:&quot;horizontal&quot;,&quot;submenu_icon&quot;:{&quot;value&quot;:&quot;&lt;i class=\&quot;fas fa-caret-down\&quot;&gt;&lt;\/i&gt;&quot;,&quot;library&quot;:&quot;fa-solid&quot;},&quot;toggle&quot;:&quot;burger&quot;}" data-widget_type="nav-menu.default">
+				<div class="elementor-widget-container">
+			<link rel="stylesheet" href="./codigo-de-conduta/widget-nav-menu.min.css">			<nav migration_allowed="1" migrated="0" role="navigation" class="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-horizontal e--pointer-text e--animation-skew">
+				<ul id="menu-1-ff501d3" class="elementor-nav-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-144"><a href="https://gambiconf.dev/2021/" class="elementor-item">Início</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-145"><a href="https://gambiconf.dev/2021/#sobre" class="elementor-item elementor-item-anchor">Sobre</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-148"><a href="https://gambiconf.dev/2021/#programacao" class="elementor-item elementor-item-anchor">Programação</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-363"><a href="https://gambiconf.dev/2021/#palestrantes" class="elementor-item elementor-item-anchor">Palestrantes</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-149"><a href="https://gambiconf.dev/2021/#ingressos" class="elementor-item elementor-item-anchor">Adquirir Ingressos</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-150"><a href="https://gambiconf.dev/2021/#contato" class="elementor-item elementor-item-anchor">Contato</a></li>
+</ul>			</nav>
+					<div class="elementor-menu-toggle" role="button" tabindex="0" aria-label="Alternar menu" aria-expanded="false">
+			<i aria-hidden="true" role="presentation" class="elementor-menu-toggle__icon--open eicon-menu-bar"></i><i aria-hidden="true" role="presentation" class="elementor-menu-toggle__icon--close eicon-close"></i>			<span class="elementor-screen-only">Menu</span>
+		</div>
+			<nav class="elementor-nav-menu--dropdown elementor-nav-menu__container" role="navigation" aria-hidden="true">
+				<ul id="menu-2-ff501d3" class="elementor-nav-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-144"><a href="https://gambiconf.dev/2021/" class="elementor-item" tabindex="-1">Início</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-145"><a href="https://gambiconf.dev/2021/#sobre" class="elementor-item elementor-item-anchor" tabindex="-1">Sobre</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-148"><a href="https://gambiconf.dev/2021/#programacao" class="elementor-item elementor-item-anchor" tabindex="-1">Programação</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-363"><a href="https://gambiconf.dev/2021/#palestrantes" class="elementor-item elementor-item-anchor" tabindex="-1">Palestrantes</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-149"><a href="https://gambiconf.dev/2021/#ingressos" class="elementor-item elementor-item-anchor" tabindex="-1">Adquirir Ingressos</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-150"><a href="https://gambiconf.dev/2021/#contato" class="elementor-item elementor-item-anchor" tabindex="-1">Contato</a></li>
+</ul>			</nav>
+				</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</header>
+				</div>
+		</div>
+				<div data-elementor-type="wp-page" data-elementor-id="110" class="elementor elementor-110" data-elementor-settings="[]">
+							<div class="elementor-section-wrap">
+							<section class="elementor-section elementor-top-section elementor-element elementor-element-073887b elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="073887b" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-a22601e" data-id="a22601e" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<section class="elementor-section elementor-inner-section elementor-element elementor-element-8dab605 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="8dab605" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-4c13969" data-id="4c13969" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-6734472 elementor-widget elementor-widget-image" data-id="6734472" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<img width="78" height="58" src="./codigo-de-conduta/pixelart-book.png" class="attachment-medium size-medium lazyloaded" alt="" data-ll-status="loaded"><noscript><img width="78" height="58" src="./uploads/2021/09/pixelart-book.png" class="attachment-medium size-medium" alt="" /></noscript>															</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-43a2750" data-id="43a2750" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-5b74d62 elementor-widget elementor-widget-heading" data-id="5b74d62" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<style>/*! elementor - v3.5.3 - 28-12-2021 */
+.elementor-heading-title{padding:0;margin:0;line-height:1}.elementor-widget-heading .elementor-heading-title[class*=elementor-size-]>a{color:inherit;font-size:inherit;line-height:inherit}.elementor-widget-heading .elementor-heading-title.elementor-size-small{font-size:15px}.elementor-widget-heading .elementor-heading-title.elementor-size-medium{font-size:19px}.elementor-widget-heading .elementor-heading-title.elementor-size-large{font-size:29px}.elementor-widget-heading .elementor-heading-title.elementor-size-xl{font-size:39px}.elementor-widget-heading .elementor-heading-title.elementor-size-xxl{font-size:59px}</style><h1 class="elementor-heading-title elementor-size-default">Código de Conduta</h1>		</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-a492e05" data-id="a492e05" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-4d7a50c elementor-icon-list--layout-inline elementor-align-right elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="4d7a50c" data-element_type="widget" data-widget_type="icon-list.default">
+				<div class="elementor-widget-container">
+			<style>/*! elementor - v3.5.3 - 28-12-2021 */
+.elementor-widget.elementor-icon-list--layout-inline .elementor-widget-container{overflow:hidden}.elementor-widget .elementor-icon-list-items.elementor-inline-items{margin-right:-8px;margin-left:-8px}.elementor-widget .elementor-icon-list-items.elementor-inline-items .elementor-icon-list-item{margin-right:8px;margin-left:8px}.elementor-widget .elementor-icon-list-items.elementor-inline-items .elementor-icon-list-item:after{width:auto;left:auto;right:auto;position:relative;height:100%;border-top:0;border-bottom:0;border-right:0;border-left-width:1px;border-style:solid;right:-8px}.elementor-widget .elementor-icon-list-items{list-style-type:none;margin:0;padding:0}.elementor-widget .elementor-icon-list-item{margin:0;padding:0;position:relative}.elementor-widget .elementor-icon-list-item:after{position:absolute;bottom:0;width:100%}.elementor-widget .elementor-icon-list-item,.elementor-widget .elementor-icon-list-item a{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;font-size:inherit}.elementor-widget .elementor-icon-list-icon+.elementor-icon-list-text{-ms-flex-item-align:center;align-self:center;padding-left:5px}.elementor-widget .elementor-icon-list-icon{display:-webkit-box;display:-ms-flexbox;display:flex}.elementor-widget .elementor-icon-list-icon svg{width:var(--e-icon-list-icon-size,1em);height:var(--e-icon-list-icon-size,1em)}.elementor-widget .elementor-icon-list-icon i{width:1.25em;font-size:var(--e-icon-list-icon-size)}.elementor-widget.elementor-widget-icon-list .elementor-icon-list-icon{text-align:var(--e-icon-list-icon-align)}.elementor-widget.elementor-widget-icon-list .elementor-icon-list-icon svg{margin:var(--e-icon-list-icon-margin,0 calc(var(--e-icon-list-icon-size, 1em) * .25) 0 0)}.elementor-widget.elementor-list-item-link-full_width a{width:100%}.elementor-widget.elementor-align-center .elementor-icon-list-item,.elementor-widget.elementor-align-center .elementor-icon-list-item a{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}.elementor-widget.elementor-align-center .elementor-icon-list-item:after{margin:auto}.elementor-widget.elementor-align-center .elementor-inline-items{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}.elementor-widget.elementor-align-left .elementor-icon-list-item,.elementor-widget.elementor-align-left .elementor-icon-list-item a{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;text-align:left}.elementor-widget.elementor-align-left .elementor-inline-items{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start}.elementor-widget.elementor-align-right .elementor-icon-list-item,.elementor-widget.elementor-align-right .elementor-icon-list-item a{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;text-align:right}.elementor-widget.elementor-align-right .elementor-icon-list-items{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end}.elementor-widget:not(.elementor-align-right) .elementor-icon-list-item:after{left:0}.elementor-widget:not(.elementor-align-left) .elementor-icon-list-item:after{right:0}@media (max-width:1024px){.elementor-widget.elementor-tablet-align-center .elementor-icon-list-item,.elementor-widget.elementor-tablet-align-center .elementor-icon-list-item a,.elementor-widget.elementor-tablet-align-center .elementor-icon-list-items{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}.elementor-widget.elementor-tablet-align-center .elementor-icon-list-item:after{margin:auto}.elementor-widget.elementor-tablet-align-left .elementor-icon-list-items{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start}.elementor-widget.elementor-tablet-align-left .elementor-icon-list-item,.elementor-widget.elementor-tablet-align-left .elementor-icon-list-item a{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;text-align:left}.elementor-widget.elementor-tablet-align-right .elementor-icon-list-items{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end}.elementor-widget.elementor-tablet-align-right .elementor-icon-list-item,.elementor-widget.elementor-tablet-align-right .elementor-icon-list-item a{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;text-align:right}.elementor-widget:not(.elementor-tablet-align-right) .elementor-icon-list-item:after{left:0}.elementor-widget:not(.elementor-tablet-align-left) .elementor-icon-list-item:after{right:0}}@media (max-width:767px){.elementor-widget.elementor-mobile-align-center .elementor-icon-list-item,.elementor-widget.elementor-mobile-align-center .elementor-icon-list-item a,.elementor-widget.elementor-mobile-align-center .elementor-icon-list-items{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}.elementor-widget.elementor-mobile-align-center .elementor-icon-list-item:after{margin:auto}.elementor-widget.elementor-mobile-align-left .elementor-icon-list-items{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start}.elementor-widget.elementor-mobile-align-left .elementor-icon-list-item,.elementor-widget.elementor-mobile-align-left .elementor-icon-list-item a{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;text-align:left}.elementor-widget.elementor-mobile-align-right .elementor-icon-list-items{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end}.elementor-widget.elementor-mobile-align-right .elementor-icon-list-item,.elementor-widget.elementor-mobile-align-right .elementor-icon-list-item a{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;text-align:right}.elementor-widget:not(.elementor-mobile-align-right) .elementor-icon-list-item:after{left:0}.elementor-widget:not(.elementor-mobile-align-left) .elementor-icon-list-item:after{right:0}}</style>		<ul class="elementor-icon-list-items elementor-inline-items">
+							<li class="elementor-icon-list-item elementor-inline-item">
+											<span class="elementor-icon-list-icon">
+							<i aria-hidden="true" class="far fa-minus-square"></i>						</span>
+										<span class="elementor-icon-list-text"></span>
+									</li>
+								<li class="elementor-icon-list-item elementor-inline-item">
+											<span class="elementor-icon-list-icon">
+							<i aria-hidden="true" class="far fa-window-close"></i>						</span>
+										<span class="elementor-icon-list-text"></span>
+									</li>
+						</ul>
+				</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-ea82ae7 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="ea82ae7" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-f258291" data-id="f258291" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<section class="elementor-section elementor-inner-section elementor-element elementor-element-b03eb55 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="b03eb55" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-ca7fa31" data-id="ca7fa31" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-8c452be elementor-widget elementor-widget-heading" data-id="8c452be" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Português</h2>		</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-2ca3a0d elementor-hidden-mobile" data-id="2ca3a0d" data-element_type="column">
+			<div class="elementor-widget-wrap">
+									</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-inner-section elementor-element elementor-element-f6bbf4a elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="f6bbf4a" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-4ec8712" data-id="4ec8712" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-53e49bd elementor-widget elementor-widget-text-editor" data-id="53e49bd" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+			<style>/*! elementor - v3.5.3 - 28-12-2021 */
+.elementor-widget-text-editor.elementor-drop-cap-view-stacked .elementor-drop-cap{background-color:#818a91;color:#fff}.elementor-widget-text-editor.elementor-drop-cap-view-framed .elementor-drop-cap{color:#818a91;border:3px solid;background-color:transparent}.elementor-widget-text-editor:not(.elementor-drop-cap-view-default) .elementor-drop-cap{margin-top:8px}.elementor-widget-text-editor:not(.elementor-drop-cap-view-default) .elementor-drop-cap-letter{width:1em;height:1em}.elementor-widget-text-editor .elementor-drop-cap{float:left;text-align:center;line-height:1;font-size:50px}.elementor-widget-text-editor .elementor-drop-cap-letter{display:inline-block}</style>				<p>O evento GambiConf é um ambiente amistoso, de boa convivência, inclusivo e livre de intimidação, onde todas as pessoas são bem-vindas e a civilidade é exigida.</p><p>Com esta finalidade, a organização do evento conta com uma Equipe de Resposta que atua para garantir um ambiente com essas qualidades.</p><p>Por isso:</p><ol><li>Não é tolerado nenhum tipo de assédio, discriminação inapropriada ou humilhação pública;</li><li>Não é tolerado o descumprimento das leis brasileiras;</li><li>Toda pessoa presente no evento, independente do seu papel, está sujeita a estas regras;</li></ol><p>Desta forma, entendemos que:</p><ul><li>Assédio é a ação de insistir, perseguir ou coagir outra pessoa a um comportamento involuntário.</li><li>Discriminação inapropriada é o ato de separar, injuriar ou humilhar alguém promovendo sua exclusão por atributo particular da mesma.</li><li>Humilhação pública é o ato de submeter, rebaixar, ridicularizar ou promover o vexame de outro publicamente.</li></ul><p>Se você se sentiu assediado, discriminado indevidamente ou humilhado, ou presenciou alguma destas atitudes, por favor entre em contato com a Equipe de Resposta.</p><p>Havendo um relato de violação destes princípios, a Equipe de Resposta realizará a devida análise e, quando necessário, tomará as ações para impedir a reincidência. Estas ações podem, mas não se restringem nem implicam em ir desde uma conversa em busca da retratação até um convite a se retirar do evento por tempo indeterminado.</p><h3>Crédito</h3><p>Este código de conduta é uma versão modificada do Código de Conduta do Evento Python Brasil.</p>						</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-17d96af elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="17d96af" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-7d09619" data-id="7d09619" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<section class="elementor-section elementor-inner-section elementor-element elementor-element-47e28a5 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="47e28a5" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-a3bfc70" data-id="a3bfc70" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-6604b1e elementor-widget elementor-widget-heading" data-id="6604b1e" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">English</h2>		</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-bb5c48f elementor-hidden-mobile" data-id="bb5c48f" data-element_type="column">
+			<div class="elementor-widget-wrap">
+									</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-inner-section elementor-element elementor-element-1abefd8 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="1abefd8" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-60882d8" data-id="60882d8" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-e46d093 elementor-widget elementor-widget-text-editor" data-id="e46d093" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+							<p>GambiConf is a friendly, inclusive and harassment-free environment where everyone is welcome and where civility is compulsory.</p><p>Conference organizers offer a Response Team acting in order to guarantee such an environment.</p><p>Therefore:</p><ol><li>We will not tolerate harassment, inappropriate discrimination or public humiliation of any kind;</li><li>We will not tolerate non-compliance with Brazilian laws;</li><li>Regardless of their role every person taking part in the conference is subject to these rules;</li></ol><p>Thus we understand:</p><ul><li>Harassment is the act of insisting, persecuting or coercing someone into involuntary behavior.</li><li>Inappropriate discrimination is the act of pulling apart, insulting or humiliating someone by promoting their exclusion by any particular attribute.</li><li>Public humiliation is the act of subjugating, pulling down, ridiculing or publicly promoting the vexation of others.</li></ul><p>If you feel harassed, discriminated or humiliated, or if you witnessed any of these behaviors, please contact the Response Team.</p><p>In face of any allegation of violation of these principles, the Response Team will examine and consider the case in order to take action to ensure that such events will not happen again. These actions might take the form of a conversation to reconcile the parts, an invitation to leave the event indefinitely or any other form to keep up with the values stated in this Code of Conduct.</p><h3><a id="user-content-credits" class="anchor" href="https://github.com/gambiconf/codigo-de-conduta#credits" aria-hidden="true"></a>Credits</h3><p>This code of conduct is a modified version of the Python Brasil Code of Conduct.</p>						</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-469e8d9 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="469e8d9" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-7fe540f" data-id="7fe540f" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<section class="elementor-section elementor-inner-section elementor-element elementor-element-fdc85b8 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="fdc85b8" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-0ab3d11" data-id="0ab3d11" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-1542c3c elementor-widget elementor-widget-heading" data-id="1542c3c" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Spanish</h2>		</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-712a36d elementor-hidden-mobile" data-id="712a36d" data-element_type="column">
+			<div class="elementor-widget-wrap">
+									</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-inner-section elementor-element elementor-element-27cc548 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="27cc548" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-aa59b3f" data-id="aa59b3f" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-04cdd91 elementor-widget elementor-widget-text-editor" data-id="04cdd91" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+							<div class="flex-shrink-0 col-12 col-md-9 mb-4 mb-md-0" data-view-component="true"><div id="readme" class="Box md js-code-block-container Box--responsive"><div class="Box-body px-5 pb-5" data-target="readme-toc.content"><article class="markdown-body entry-content container-lg"><p>El evento GambiConf es un ambiente amistoso, de buena convivencia, inclusivo y libre de intimidación, donde todas las personas son bienvenidas y la civilidad es exigida.</p><p>Con esta finalidad, la organización del evento cuenta con un Equipo de Respuesta que actúa para garantizar un ambiente con esas cualidades.</p><p>Por eso:</p><ol><li>No es tolerado ningún tipo de acoso, discriminación inapropiada o humillación pública;</li><li>No es tolerado el incumplimiento de las leyes brasileñas;</li><li>Toda persona presente en el evento, independientemente de su papel, está sujeta a estas reglas;</li></ol><p>De esta forma, entendemos que:</p><ul><li>El acoso es la acción de insistir, perseguir o coaccionar a otra persona a un comportamiento involuntario.</li><li>La discriminación inapropiada es el acto de separar, injuriar o humillar a alguien promoviendo su exclusión por atributo particular de la misma.</li><li>La humillación pública es el acto de someter, rebajar, ridiculizar o promover la vergüenza de otro en público.</li></ul><p>Si usted se siente asediado, discriminado indebidamente o humillado, o ha presenciado alguna de estas actitudes, por favor entre en contacto con el Equipo de Respuesta.</p><p>Habiendo un relato de violación de estos principios, el Equipo de Respuesta realizará el debida análisis y, cuando sea necesario, tomará las acciones para impedir la reincidencia. Estas acciones pueden, pero no se restringen ni implican en ir desde una conversación en busca de la retractación hasta una invitación a retirarse del evento por tiempo indeterminado.</p><h3><a id="user-content-créditos" class="anchor" href="https://github.com/gambiconf/codigo-de-conduta#cr%C3%A9ditos" aria-hidden="true"></a>Créditos</h3><p>Este código de conducta es una versión modificada del Código de Conducta del Evento Python Brasil.</p></article></div></div></div>						</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+					</div>
+		</div>
+							</div>
+		</section>
+						</div>
+					</div>
+				<div data-elementor-type="footer" data-elementor-id="159" class="elementor elementor-159 elementor-location-footer" data-elementor-settings="[]">
+		<div class="elementor-section-wrap">
+					<section class="elementor-section elementor-top-section elementor-element elementor-element-64ff86ad elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="64ff86ad" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-12cac7c7" data-id="12cac7c7" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-b59c14b elementor-widget elementor-widget-image" data-id="b59c14b" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+																<a href="https://gambiconf.dev/2021/">
+							<img width="512" height="372" src="./codigo-de-conduta/GambiLogoMultigradient512.png" class="attachment-medium_large size-medium_large lazyloaded" alt="" sizes="(max-width: 512px) 100vw, 512px" srcset="./uploads/2021/09/GambiLogoMultigradient512.png 512w, ./uploads/2021/09/GambiLogoMultigradient512-300x218.png 300w" data-ll-status="loaded"><noscript><img width="512" height="372" src="./uploads/2021/09/GambiLogoMultigradient512.png" class="attachment-medium_large size-medium_large" alt="" srcset="./uploads/2021/09/GambiLogoMultigradient512.png 512w, ./uploads/2021/09/GambiLogoMultigradient512-300x218.png 300w" sizes="(max-width: 512px) 100vw, 512px" /></noscript>								</a>
+															</div>
+				</div>
+				<div class="elementor-element elementor-element-35100ccb elementor-widget elementor-widget-text-editor" data-id="35100ccb" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+							<p><strong>Evento tech 11 e 12 de dezembro.</strong></p>
+<p>@Copyright 2021 – GambiConf</p>						</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-253a0581" data-id="253a0581" data-element_type="column">
+			<div class="elementor-widget-wrap">
+									</div>
+		</div>
+				<div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-72250832" data-id="72250832" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-4346d715 elementor-widget elementor-widget-heading" data-id="4346d715" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<p class="elementor-heading-title elementor-size-default">Mapa do site</p>		</div>
+				</div>
+				<div class="elementor-element elementor-element-7287d126 elementor-align-left elementor-mobile-align-left elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="7287d126" data-element_type="widget" data-widget_type="icon-list.default">
+				<div class="elementor-widget-container">
+					<ul class="elementor-icon-list-items">
+							<li class="elementor-icon-list-item">
+											<a href="https://gambiconf.dev/2021/">
+
+											<span class="elementor-icon-list-text">Início</span>
+											</a>
+									</li>
+								<li class="elementor-icon-list-item">
+											<a href="https://gambiconf.dev/2021/#sobre">
+
+											<span class="elementor-icon-list-text">Sobre</span>
+											</a>
+									</li>
+								<li class="elementor-icon-list-item">
+											<a href="https://gambiconf.dev/2021/#programacao">
+
+											<span class="elementor-icon-list-text">Programação</span>
+											</a>
+									</li>
+								<li class="elementor-icon-list-item">
+											<a href="https://gambiconf.dev/2021/#palestrantes">
+
+											<span class="elementor-icon-list-text">Palestrantes</span>
+											</a>
+									</li>
+								<li class="elementor-icon-list-item">
+											<a href="https://gambiconf.dev/2021/#ingressos">
+
+											<span class="elementor-icon-list-text">Adquirir Ingressos</span>
+											</a>
+									</li>
+								<li class="elementor-icon-list-item">
+											<a href="https://gambiconf.dev/2021/#contato">
+
+											<span class="elementor-icon-list-text">Contato</span>
+											</a>
+									</li>
+								<li class="elementor-icon-list-item">
+											<a href="https://gambiconf.dev/2021/codigo-de-conduta/">
+
+											<span class="elementor-icon-list-text">Código de Conduta</span>
+											</a>
+									</li>
+						</ul>
+				</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-749cc21" data-id="749cc21" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-6f7719a elementor-widget elementor-widget-heading" data-id="6f7719a" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<p class="elementor-heading-title elementor-size-default">Fale conosco</p>		</div>
+				</div>
+				<div class="elementor-element elementor-element-53655f82 elementor-align-left elementor-mobile-align-left elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="53655f82" data-element_type="widget" data-widget_type="icon-list.default">
+				<div class="elementor-widget-container">
+					<ul class="elementor-icon-list-items">
+							<li class="elementor-icon-list-item">
+											<a href="mailto:mambi@gambiconf.dev">
+
+											<span class="elementor-icon-list-text">mambi@gambiconf.dev</span>
+											</a>
+									</li>
+						</ul>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-c296031 e-grid-align-mobile-left elementor-shape-circle e-grid-align-tablet-left e-grid-align-left elementor-grid-0 elementor-widget elementor-widget-social-icons" data-id="c296031" data-element_type="widget" data-widget_type="social-icons.default">
+				<div class="elementor-widget-container">
+			<style>/*! elementor - v3.5.3 - 28-12-2021 */
+.elementor-widget-social-icons.elementor-grid-0 .elementor-widget-container,.elementor-widget-social-icons.elementor-grid-mobile-0 .elementor-widget-container,.elementor-widget-social-icons.elementor-grid-tablet-0 .elementor-widget-container{line-height:1;font-size:0}.elementor-widget-social-icons:not(.elementor-grid-0):not(.elementor-grid-tablet-0):not(.elementor-grid-mobile-0) .elementor-grid{display:inline-grid}.elementor-widget-social-icons .elementor-grid{grid-column-gap:var(--grid-column-gap,5px);grid-row-gap:var(--grid-row-gap,5px);grid-template-columns:var(--grid-template-columns);-webkit-box-pack:var(--justify-content,center);-ms-flex-pack:var(--justify-content,center);justify-content:var(--justify-content,center);justify-items:var(--justify-content,center)}.elementor-icon.elementor-social-icon{font-size:var(--icon-size,25px);line-height:var(--icon-size,25px);width:calc(var(--icon-size, 25px) + (2 * var(--icon-padding, .5em)));height:calc(var(--icon-size, 25px) + (2 * var(--icon-padding, .5em)))}.elementor-social-icon{--e-social-icon-icon-color:#fff;display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;background-color:#818a91;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;text-align:center;cursor:pointer}.elementor-social-icon i{color:var(--e-social-icon-icon-color)}.elementor-social-icon svg{fill:var(--e-social-icon-icon-color)}.elementor-social-icon:last-child{margin:0}.elementor-social-icon:hover{opacity:.9;color:#fff}.elementor-social-icon-android{background-color:#a4c639}.elementor-social-icon-apple{background-color:#999}.elementor-social-icon-behance{background-color:#1769ff}.elementor-social-icon-bitbucket{background-color:#205081}.elementor-social-icon-codepen{background-color:#000}.elementor-social-icon-delicious{background-color:#39f}.elementor-social-icon-deviantart{background-color:#05cc47}.elementor-social-icon-digg{background-color:#005be2}.elementor-social-icon-dribbble{background-color:#ea4c89}.elementor-social-icon-elementor{background-color:#d30c5c}.elementor-social-icon-envelope{background-color:#ea4335}.elementor-social-icon-facebook,.elementor-social-icon-facebook-f{background-color:#3b5998}.elementor-social-icon-flickr{background-color:#0063dc}.elementor-social-icon-foursquare{background-color:#2d5be3}.elementor-social-icon-free-code-camp,.elementor-social-icon-freecodecamp{background-color:#006400}.elementor-social-icon-github{background-color:#333}.elementor-social-icon-gitlab{background-color:#e24329}.elementor-social-icon-globe{background-color:#818a91}.elementor-social-icon-google-plus,.elementor-social-icon-google-plus-g{background-color:#dd4b39}.elementor-social-icon-houzz{background-color:#7ac142}.elementor-social-icon-instagram{background-color:#262626}.elementor-social-icon-jsfiddle{background-color:#487aa2}.elementor-social-icon-link{background-color:#818a91}.elementor-social-icon-linkedin,.elementor-social-icon-linkedin-in{background-color:#0077b5}.elementor-social-icon-medium{background-color:#00ab6b}.elementor-social-icon-meetup{background-color:#ec1c40}.elementor-social-icon-mixcloud{background-color:#273a4b}.elementor-social-icon-odnoklassniki{background-color:#f4731c}.elementor-social-icon-pinterest{background-color:#bd081c}.elementor-social-icon-product-hunt{background-color:#da552f}.elementor-social-icon-reddit{background-color:#ff4500}.elementor-social-icon-rss{background-color:#f26522}.elementor-social-icon-shopping-cart{background-color:#4caf50}.elementor-social-icon-skype{background-color:#00aff0}.elementor-social-icon-slideshare{background-color:#0077b5}.elementor-social-icon-snapchat{background-color:#fffc00}.elementor-social-icon-soundcloud{background-color:#f80}.elementor-social-icon-spotify{background-color:#2ebd59}.elementor-social-icon-stack-overflow{background-color:#fe7a15}.elementor-social-icon-steam{background-color:#00adee}.elementor-social-icon-stumbleupon{background-color:#eb4924}.elementor-social-icon-telegram{background-color:#2ca5e0}.elementor-social-icon-thumb-tack{background-color:#1aa1d8}.elementor-social-icon-tripadvisor{background-color:#589442}.elementor-social-icon-tumblr{background-color:#35465c}.elementor-social-icon-twitch{background-color:#6441a5}.elementor-social-icon-twitter{background-color:#1da1f2}.elementor-social-icon-viber{background-color:#665cac}.elementor-social-icon-vimeo{background-color:#1ab7ea}.elementor-social-icon-vk{background-color:#45668e}.elementor-social-icon-weibo{background-color:#dd2430}.elementor-social-icon-weixin{background-color:#31a918}.elementor-social-icon-whatsapp{background-color:#25d366}.elementor-social-icon-wordpress{background-color:#21759b}.elementor-social-icon-xing{background-color:#026466}.elementor-social-icon-yelp{background-color:#af0606}.elementor-social-icon-youtube{background-color:#cd201f}.elementor-social-icon-500px{background-color:#0099e5}.elementor-shape-rounded .elementor-icon.elementor-social-icon{-webkit-border-radius:10%;border-radius:10%}.elementor-shape-circle .elementor-icon.elementor-social-icon{-webkit-border-radius:50%;border-radius:50%}</style>		<div class="elementor-social-icons-wrapper elementor-grid">
+							<span class="elementor-grid-item">
+					<a class="elementor-icon elementor-social-icon elementor-social-icon-twitter elementor-repeater-item-669db8c" href="https://twitter.com/gambiconf" target="_blank">
+						<span class="elementor-screen-only">Twitter</span>
+						<i class="fab fa-twitter"></i>					</a>
+				</span>
+							<span class="elementor-grid-item">
+					<a class="elementor-icon elementor-social-icon elementor-social-icon-facebook elementor-repeater-item-3b7b99e" href="https://www.facebook.com/GambiConf-102543485504335" target="_blank">
+						<span class="elementor-screen-only">Facebook</span>
+						<i class="fab fa-facebook"></i>					</a>
+				</span>
+							<span class="elementor-grid-item">
+					<a class="elementor-icon elementor-social-icon elementor-social-icon-linkedin elementor-repeater-item-a478f17" href="https://www.linkedin.com/company/gambiconf" target="_blank">
+						<span class="elementor-screen-only">Linkedin</span>
+						<i class="fab fa-linkedin"></i>					</a>
+				</span>
+					</div>
+				</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-778adcfa elementor-reverse-mobile elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="778adcfa" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-711c6066" data-id="711c6066" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<section class="elementor-section elementor-inner-section elementor-element elementor-element-24b1fe45 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="24b1fe45" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-1f0dbaaf" data-id="1f0dbaaf" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-413db012 elementor-widget elementor-widget-heading" data-id="413db012" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<p class="elementor-heading-title elementor-size-default"><a href="https://criacao.cc/?utm_source=rodape&amp;utm_medium=Rio_Doce_Saude&amp;utm_id=clientes_criacao.cc" target="_blank">Feito com carinho</a></p>		</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-5be64c44" data-id="5be64c44" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-70ca5bbe elementor-widget__width-auto elementor-widget elementor-widget-image" data-id="70ca5bbe" data-element_type="widget" id="cc-img" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+																<a href="https://criacao.cc/?utm_source=rodape&amp;utm_medium=Rio_Doce_Saude&amp;utm_id=clientes_criacao.cc" target="_blank">
+							<img width="300" height="62" src="./codigo-de-conduta/Logo-criacao-cc-300x62.png" class="attachment-medium size-medium lazyloaded" alt="" sizes="(max-width: 300px) 100vw, 300px" srcset="./uploads/2021/09/Logo-criacao-cc-300x62.png 300w, ./uploads/2021/09/Logo-criacao-cc.png 536w" data-ll-status="loaded"><noscript><img width="300" height="62" src="./uploads/2021/09/Logo-criacao-cc-300x62.png" class="attachment-medium size-medium" alt="" srcset="./uploads/2021/09/Logo-criacao-cc-300x62.png 300w, ./uploads/2021/09/Logo-criacao-cc.png 536w" sizes="(max-width: 300px) 100vw, 300px" /></noscript>								</a>
+															</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+					</div>
+		</div>
+							</div>
+		</section>
+				</div>
+		</div>
+		
+<script type="text/javascript" src="./codigo-de-conduta/app.js" id="criacaocc-app-js" defer=""></script>
+<script type="text/javascript" id="rocket-browser-checker-js-after">
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script type="text/javascript" id="rocket-preload-links-js-extra">
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/(.+\/)?feed\/?.+\/?|\/(?:.+\/)?embed\/|\/(index\\.php\/)?wp\\-json(\/.*|$)|\/wp-admin\/|\/logout\/|\/wp-login.php","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|php|pdf|html|htm","siteUrl":"https:\/\/gambiconf.dev","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type="text/javascript" id="rocket-preload-links-js-after">
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<script type="text/javascript" src="./codigo-de-conduta/wp-embed.min.js" id="wp-embed-js" defer=""></script>
+<script type="text/javascript" src="./codigo-de-conduta/jquery.min.js" id="jquery-core-js" defer=""></script>
+<script type="text/javascript" src="./codigo-de-conduta/jquery-migrate.min.js" id="jquery-migrate-js" defer=""></script>
+<script type="text/javascript" src="./codigo-de-conduta/jquery.smartmenus.min.js" id="smartmenus-js" defer=""></script>
+<script type="text/javascript" src="./codigo-de-conduta/webpack-pro.runtime.min.js" id="elementor-pro-webpack-runtime-js" defer=""></script>
+<script type="text/javascript" src="./codigo-de-conduta/webpack.runtime.min.js" id="elementor-webpack-runtime-js" defer=""></script>
+<script type="text/javascript" src="./codigo-de-conduta/frontend-modules.min.js" id="elementor-frontend-modules-js" defer=""></script>
+<script type="text/javascript" id="elementor-pro-frontend-js-before">
+var ElementorProFrontendConfig = {"ajaxurl":"https:\/\/gambiconf.dev\/wp\/wp-admin\/admin-ajax.php","nonce":"739c865c1c","urls":{"assets":"https:\/\/gambiconf.dev\/packages\/plugins\/elementor-pro\/assets\/","rest":"https:\/\/gambiconf.dev\/wp-json\/"},"i18n":{"toc_no_headings_found":"N\u00e3o foram encontrados cabe\u00e7alhos nesta p\u00e1gina."},"shareButtonsNetworks":{"facebook":{"title":"Facebook","has_counter":true},"twitter":{"title":"Twitter"},"linkedin":{"title":"LinkedIn","has_counter":true},"pinterest":{"title":"Pinterest","has_counter":true},"reddit":{"title":"Reddit","has_counter":true},"vk":{"title":"VK","has_counter":true},"odnoklassniki":{"title":"OK","has_counter":true},"tumblr":{"title":"Tumblr"},"digg":{"title":"Digg"},"skype":{"title":"Skype"},"stumbleupon":{"title":"StumbleUpon","has_counter":true},"mix":{"title":"Mix"},"telegram":{"title":"Telegram"},"pocket":{"title":"Pocket","has_counter":true},"xing":{"title":"XING","has_counter":true},"whatsapp":{"title":"WhatsApp"},"email":{"title":"Email"},"print":{"title":"Print"}},"facebook_sdk":{"lang":"pt_BR","app_id":""},"lottie":{"defaultAnimationUrl":"https:\/\/gambiconf.dev\/packages\/plugins\/elementor-pro\/modules\/lottie\/assets\/animations\/default.json"}};
+</script>
+<script type="text/javascript" src="./codigo-de-conduta/frontend.min.js" id="elementor-pro-frontend-js" defer=""></script>
+<script type="text/javascript" src="./codigo-de-conduta/waypoints.min.js" id="elementor-waypoints-js" defer=""></script>
+<script type="text/javascript" src="./codigo-de-conduta/core.min.js" id="jquery-ui-core-js" defer=""></script>
+<script type="text/javascript" id="elementor-frontend-js-before">
+var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false,"isScriptDebug":false},"i18n":{"shareOnFacebook":"Compartilhar no Facebook","shareOnTwitter":"Compartilhar no Twitter","pinIt":"Fixar","download":"Baixar","downloadImage":"Baixar imagem","fullscreen":"Tela cheia","zoom":"Zoom","share":"Compartilhar","playVideo":"Reproduzir v\u00eddeo","previous":"Anterior","next":"Pr\u00f3ximo","close":"Fechar"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"responsive":{"breakpoints":{"mobile":{"label":"Celular","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Celular extra","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"Tablet","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tablet extra","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"Laptop","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"Widescreen","value":2400,"default_value":2400,"direction":"min","is_enabled":false}}},"version":"3.5.3","is_static":false,"experimentalFeatures":{"e_dom_optimization":true,"e_optimized_assets_loading":true,"e_optimized_css_loading":true,"a11y_improvements":true,"e_import_export":true,"e_hidden_wordpress_widgets":true,"theme_builder_v2":true,"landing-pages":true,"elements-color-picker":true,"favorite-widgets":true,"admin-top-bar":true,"form-submissions":true},"urls":{"assets":"https:\/\/gambiconf.dev\/packages\/plugins\/elementor\/assets\/"},"settings":{"page":[],"editorPreferences":[]},"kit":{"active_breakpoints":["viewport_mobile","viewport_tablet"],"global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description"},"post":{"id":110,"title":"C%C3%B3digo%20de%20Conduta%20%E2%80%93%20Gambiconf","excerpt":"","featuredImage":"https:\/\/gambiconf.dev\/uploads\/2021\/09\/pixelart-book.png"}};
+</script>
+<script type="text/javascript" src="./codigo-de-conduta/frontend.min(1).js" id="elementor-frontend-js" defer=""></script>
+<script type="text/javascript" src="./codigo-de-conduta/elements-handlers.min.js" id="pro-elements-handlers-js" defer=""></script>
+<script type="text/javascript" src="./codigo-de-conduta/jquery.sticky.min.js" id="e-sticky-js" defer=""></script>
+<script>window.lazyLoadOptions={elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}};window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async="" src="./codigo-de-conduta/lazyload.min.js"></script><script>function lazyLoadThumb(e){var t='<img loading="lazy" data-lazy-src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"><noscript><img src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"></noscript>',a='<div class="play"></div>';return t.replace("ID",e)+a}function lazyLoadYoutubeIframe(){var e=document.createElement("iframe"),t="ID?autoplay=1";t+=0===this.dataset.query.length?'':'&'+this.dataset.query;e.setAttribute("src",t.replace("ID",this.dataset.src)),e.setAttribute("frameborder","0"),e.setAttribute("allowfullscreen","1"),e.setAttribute("allow", "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"),this.parentNode.replaceChild(e,this)}document.addEventListener("DOMContentLoaded",function(){var e,t,a=document.getElementsByClassName("rll-youtube-player");for(t=0;t<a.length;t++)e=document.createElement("div"),e.setAttribute("data-id",a[t].dataset.id),e.setAttribute("data-query", a[t].dataset.query),e.setAttribute("data-src", a[t].dataset.src),e.innerHTML=lazyLoadThumb(a[t].dataset.id),e.onclick=lazyLoadYoutubeIframe,a[t].appendChild(e)});</script>
+<script>class RocketElementorAnimation{constructor(){this.deviceMode=document.createElement("span"),this.deviceMode.id="elementor-device-mode",this.deviceMode.setAttribute("class","elementor-screen-only"),document.body.appendChild(this.deviceMode)}_detectAnimations(){let t=getComputedStyle(this.deviceMode,":after").content.replace(/"/g,"");this.animationSettingKeys=this._listAnimationSettingsKeys(t),document.querySelectorAll(".elementor-invisible[data-settings]").forEach(t=>{const e=t.getBoundingClientRect();if(e.bottom>=0&&e.top<=window.innerHeight)try{this._animateElement(t)}catch(t){}})}_animateElement(t){const e=JSON.parse(t.dataset.settings),i=e._animation_delay||e.animation_delay||0,n=e[this.animationSettingKeys.find(t=>e[t])];if("none"===n)return void t.classList.remove("elementor-invisible");t.classList.remove(n),this.currentAnimation&&t.classList.remove(this.currentAnimation),this.currentAnimation=n;let s=setTimeout(()=>{t.classList.remove("elementor-invisible"),t.classList.add("animated",n),this._removeAnimationSettings(t,e)},i);window.addEventListener("rocket-startLoading",function(){clearTimeout(s)})}_listAnimationSettingsKeys(t="mobile"){const e=[""];switch(t){case"mobile":e.unshift("_mobile");case"tablet":e.unshift("_tablet");case"desktop":e.unshift("_desktop")}const i=[];return["animation","_animation"].forEach(t=>{e.forEach(e=>{i.push(t+e)})}),i}_removeAnimationSettings(t,e){this._listAnimationSettingsKeys().forEach(t=>delete e[t]),t.dataset.settings=JSON.stringify(e)}static run(){const t=new RocketElementorAnimation;requestAnimationFrame(t._detectAnimations.bind(t))}}document.addEventListener("DOMContentLoaded",RocketElementorAnimation.run);</script>
+
+
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1649522300 --><span id="elementor-device-mode" class="elementor-screen-only"></span><span id="elementor-device-mode" class="elementor-screen-only"></span><svg style="display: none;" class="e-font-icon-svg-symbols"></svg></body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>

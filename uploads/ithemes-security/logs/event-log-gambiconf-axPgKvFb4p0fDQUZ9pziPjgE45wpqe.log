@@ -1,0 +1,2 @@
+parent_id,module,code,data,type,timestamp,init_timestamp,memory_current,memory_peak,user_id,remote_ip
+0,file_change,rescheduling::no-lock,"a:2:{s:3:""job"";a:4:{s:4:""step"";s:9:""get-files"";s:5:""chunk"";s:6:""themes"";s:10:""loop_start"";i:1632579475;s:9:""loop_item"";i:5;}s:2:""id"";s:11:""file-change"";}",debug,"2021-09-29 12:37:03","2021-09-29 12:37:03",17000672,17000928,https://gambiconf.criacao.page/wp/wp-login.php?redirect_to=https%3A%2F%2Fgambiconf.criacao.page%2Fwp%2Fwp-admin%2F&reauth=1,1,0,3.83.137.210

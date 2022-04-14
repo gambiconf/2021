@@ -1,0 +1,2 @@
+parent_id,module,code,data,type,timestamp,init_timestamp,memory_current,memory_peak,user_id,remote_ip
+0,user_logging,"post-status-changed::1,110,draft,publish","a:4:{s:7:""user_id"";i:1;s:7:""post_id"";i:110;s:10:""old_status"";s:5:""draft"";s:10:""new_status"";s:7:""publish"";}",notice,"2021-09-23 14:59:16","2021-09-23 14:59:16",21961752,21973000,https://gambiconf.criacao.page/wp/wp-admin/admin-ajax.php,1,1,177.85.224.77

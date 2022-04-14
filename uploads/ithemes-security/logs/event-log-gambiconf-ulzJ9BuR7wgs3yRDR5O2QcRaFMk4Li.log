@@ -1,0 +1,2 @@
+parent_id,module,code,data,type,timestamp,init_timestamp,memory_current,memory_peak,user_id,remote_ip
+0,user_logging,user-logged-in::3,"a:1:{s:7:""user_id"";i:3;}",notice,"2021-10-01 18:52:16","2021-10-01 18:52:16",17599896,17625824,https://gambiconf.criacao.page/wp/wp-login.php,1,0,2001:818:d80d:f900:48ef:1657:aaf7:5f8d

@@ -1,0 +1,2 @@
+parent_id,module,code,data,type,timestamp,init_timestamp,memory_current,memory_peak,user_id,remote_ip
+1632320285.7891,file_change,scan,"a:2:{s:6:""status"";s:15:""get_chunk_files"";s:5:""chunk"";s:8:""includes"";}",process-update,"2021-09-22 14:19:17","2021-09-22 14:19:17",20537624,20565184,https://gambiconf.criacao.page/wp/wp-admin/index.php,1,1,168.227.149.1

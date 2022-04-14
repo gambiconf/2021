@@ -1,0 +1,2 @@
+parent_id,module,code,data,type,timestamp,init_timestamp,memory_current,memory_peak,user_id,remote_ip
+0,user_logging,"plugin-deactivated::varnish-http-purge/varnish-http-purge.php,",,notice,"2021-10-27 12:14:17","2021-10-27 12:14:17",81424440,81511624,wp-cli,1,0,127.0.0.1

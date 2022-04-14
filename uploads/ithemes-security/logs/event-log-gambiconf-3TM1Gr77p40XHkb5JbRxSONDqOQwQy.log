@@ -1,0 +1,3 @@
+parent_id,module,code,data,type,timestamp,init_timestamp,memory_current,memory_peak,user_id,remote_ip
+1632494949.1133,file_change,scan,"a:1:{s:6:""status"";s:22:""hash_comparisons_start"";}",process-update,"2021-09-24 19:55:00","2021-09-24 19:55:00",17397120,17444080,wp-cron,1,0,2001:19f0:9002:b2e:5400:2ff:fed9:6bb4
+1632494949.1133,file_change,scan,"a:1:{s:6:""status"";s:25:""hash_comparisons_complete"";}",process-update,"2021-09-24 19:55:00","2021-09-24 19:55:00",18056280,19143416,wp-cron,1,0,2001:19f0:9002:b2e:5400:2ff:fed9:6bb4
